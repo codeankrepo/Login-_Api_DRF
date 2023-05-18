@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head> 
+        <title>verify otp</title>
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <script>
+            function showPopup(){
+                alert("you are logged in successfully!");
+            }
+            function verifyOTP(){
+                const urlParams = new URLSearchParams(window.location.search);
+                const mobilenumber = urlParams.get('mobile');
+                const otp = document.getElementByID('otp'.value);
+                if(otp === {otpvalue}){ // here i will give the otpvalue from context from django
+                 showPopup();
+            }
+            else{
+                alert("invalid otp. please try again!");
+            }
+        }
+        </script>
+        </head>
+        <body>
+            <div class = 'container'>
+                <h2>OTP Verification</h2>
+                <form onsubmit='event.preventDefault(); verifyOTP();'>
+                    <label for='otp'> OTP:</label>
+                    <input type = 'text' id = 'otp' placeholder="enter the 6-digits otp code" pattern="[0-9]{6}" required minlength='6' maxlength='6'>
+
+                    <button type='submit'>submit</button>
+                    </form>
+                    </div>
+                </body>
+                </html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head> 
+        <title>Login Form</title>
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <script> function redirectToOTPpage(){
+        const mobilenumber = document.getElementByID('mobile').value;
+        if (mobilenumber.trim() !== ''){
+            window.location.href = "otp.html?mobile=$(mobilenumber)";
+        }    
+        }
+        </script>
+        </head>
+        <body>
+            <div class = 'container'>
+                <h2>Login Form</h2>
+                <form onsubmit = 'event.preventDefault(); redirectToOTPpage();'>
+                    <label for "mobile"> mobile number:</label>
+                    <input type = 'text' id = 'mobile' placeholder="enter your registered mobile number" required>
+
+                    <button type='submit'>Request OTP</button>
+                </form>
+            </div>
+        </body>
+        </html>
